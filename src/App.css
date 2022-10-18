@@ -5,6 +5,26 @@
   margin: 0;
  }
 
+ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
  .App {
   text-align: center;
 }
@@ -75,6 +95,7 @@ main {
   display: flex;
   color: white;
   justify-content: flex-start;
+  box-shadow: 0 0 3px 0 black;
 }
 
 nav a {
@@ -280,7 +301,7 @@ textarea {
 
 .department .post:hover{
   color: #39A2DB;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4), 0 5px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 0 rgba(77, 73, 73, 0.4), 5px 5px 5px rgba(46, 43, 43, 0.8);
  }
 
 .department .post .title:hover{
@@ -294,7 +315,8 @@ textarea {
   margin: 5px;
   padding: 20px;
   color: white;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .filePage {
@@ -357,7 +379,7 @@ textarea {
 
 .filePost:hover{
   color: #39A2DB;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4), 0 5px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 0 rgba(77, 73, 73, 0.4), 5px 5px 5px rgba(46, 43, 43, 0.8);
 }
 
 .deletePost {

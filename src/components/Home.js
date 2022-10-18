@@ -24,7 +24,9 @@ function Home({ isAuth }) {
     <nav>
       <ul>
         <li><linkbutton onClick={goToPosts}>News and Events</linkbutton></li>
+        { isAuth &&
         <li><linkbutton onClick={goToVideos}> Videos </linkbutton></li>
+        }
         <li><linkbutton onClick={goToFiles}> Files </linkbutton></li>
         </ul>
       </nav>

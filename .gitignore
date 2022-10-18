@@ -3,4 +3,5 @@ node_modules
 .github/
 .firebaserc
 firebase.json
+build/
  

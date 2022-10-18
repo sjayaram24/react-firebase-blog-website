@@ -33,7 +33,7 @@ function Videos({ isAuth }) {
     return (
     <div> 
     <div>
-    <Home isAuth/>
+      <Home isAuth/>
     </div>
     <div className="videoPage">
       {filelist && filelist.map((file) => {

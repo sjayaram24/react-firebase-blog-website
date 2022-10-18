@@ -34,7 +34,7 @@ function Files({ isAuth }) {
   return (
     <div> 
     <div>
-    <Home isAuth/>
+      <Home {...isAuth}/>
     </div>
     <div className="filePage">
       {filelist && filelist.map((file) => {

@@ -33,7 +33,7 @@ function Departments({ isAuth }) {
                 <linkbutton onClick={e => gotoDepartmentHome(department.title)}><h3 className="title"> {department.title}</h3></linkbutton>
               </div>
               <div className="deletePost">
-                {isAuth && department.author.id === auth.currentUser.uid && ( 
+                {isAuth && auth.currentUser.uid === auth.currentUser.uid && ( 
                   <button
                     onClick={() => {
                         deleteDepartment(department.id);
