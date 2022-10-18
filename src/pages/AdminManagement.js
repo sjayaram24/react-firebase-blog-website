@@ -3,7 +3,7 @@ import Tabs from "../components/Tab";
 function App({isAuth}) {
   return (
     <div className="App">
-      <Tabs isAuth/>
+      <Tabs isAuth userEmail/>
     </div>
   );
 }

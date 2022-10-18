@@ -3,7 +3,7 @@ import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
-function Departments({ isAuth }) {
+function Departments({ isAuth, userEmail }) {
   const [departmentLists, setDepartmentList] = useState([]);
   const departmentsCollectionRef = collection(db, "departments");
   const deleteDepartment = async (id) => {
@@ -33,7 +33,7 @@ function Departments({ isAuth }) {
                 <linkbutton onClick={e => gotoDepartmentHome(department.title)}><h3 className="title"> {department.title}</h3></linkbutton>
               </div>
               <div className="deletePost">
-                {isAuth && auth.currentUser.uid === auth.currentUser.uid && ( 
+                {isAuth && (userEmail === "suraj.jay.general@gmail.com" || userEmail === "ssatyanath.du@gmail.com") && ( 
                   <button
                     onClick={() => {
                         deleteDepartment(department.id);

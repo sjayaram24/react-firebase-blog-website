@@ -5,7 +5,7 @@ import Home from "../components/Home";
 import { ref, listAll, getDownloadURL, deleteObject } from "firebase/storage"
 import { FcFilm } from "react-icons/fc"
 
-function Videos({ isAuth }) {
+function Videos({ isAuth, userEmail}) {
   const [filelist, setFileList] = useState([]);
   let location = useLocation();
   const fileListReference = ref(storage, `videos/${location.state.name}/`);
@@ -48,7 +48,7 @@ function Videos({ isAuth }) {
     </video>
     </div>
     <div className="deletePost">
-      {isAuth && ( 
+      {isAuth && (userEmail === "suraj.jay.general@gmail.com" || userEmail === "ssatyanath.du@gmail.com") &&( 
         <button
           onClick={() => {
               deleteFile(file.name);

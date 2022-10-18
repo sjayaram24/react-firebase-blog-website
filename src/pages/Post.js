@@ -4,7 +4,7 @@ import { auth, db, storage } from "../firebase-config";
 import { useLocation } from "react-router-dom"
 import Home from "../components/Home";
 
-function Posts({ isAuth }) {
+function Posts({ isAuth, userEmail}) {
   const [postList, setPostList] = useState([]);
 
   let location = useLocation();
@@ -37,7 +37,8 @@ if(location) getPosts();
                 <h3><u>{post.title}</u></h3>
               </div>
               <div className="deletePost">
-                {isAuth && post.author.id === auth.currentUser.uid && ( 
+                {console.log(userEmail)}
+                {isAuth && (userEmail === "suraj.jay.general@gmail.com" || userEmail === "ssatyanath.du@gmail.com") && ( 
                   <button
                     onClick={() => {
                       deletePost(post.id);

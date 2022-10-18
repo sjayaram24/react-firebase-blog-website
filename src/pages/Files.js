@@ -6,7 +6,7 @@ import { ref, listAll, getDownloadURL, deleteObject } from "firebase/storage"
 import { FcDocument } from "react-icons/fc"
 import { DocViewer } from "react-doc-viewer"
 
-function Files({ isAuth }) {
+function Files({ isAuth, userEmail}) {
   const [filelist, setFileList] = useState([]);
   let location = useLocation();
   const fileListReference = ref(storage, `files/${location.state.name}/`);
@@ -44,7 +44,7 @@ function Files({ isAuth }) {
                 <FcDocument size="20px"/>  <a href={file.url}>{file.name}</a>
               </div>
               <div className="deletePost">
-                {isAuth && ( 
+                {isAuth && (userEmail === "suraj.jay.general@gmail.com" || userEmail === "ssatyanath.du@gmail.com") &&( 
                   <button
                     onClick={() => {
                         deleteFile(file.name);
